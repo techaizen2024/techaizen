@@ -77,11 +77,15 @@ body {
     height: 100vh;
 }
 
+.services .card {
+    margin-bottom: 30px;
+}
 
 .services .card-body i {
     font-size: 40px;
-    
 }
+
+
 
 .team .card-body i {
     font-size: 20px;
