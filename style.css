@@ -100,6 +100,35 @@ body {
 }
 
 
+.address {
+    margin-top: 20px;
+}
+
+.address h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.address p {
+    margin: 5px 0;
+}
+
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-link {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Add specific styling for the social media icons/images */
+.social-link img {
+    width: 30px; /* Adjust the size as needed */
+    height: auto;
+}
+
 
 
 
