@@ -1,83 +1,182 @@
-body {
-    margin: 0;
-    padding: 0;
+* {
     font-family: montserrat;
 }
 
-.container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 30px;
+body {
+    background: f1fbff;
 }
 
-header {
-    font-size: 20px;
-    color: white;
+.section-padding {
+    padding: 100px 0;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+}
+
+.carousel-caption {
+    bottom: 220px;
+    z-index: 2;
+}
+
+.carousel-caption h5 {
+     font-size: 45px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     margin-top: 25px;
+     
+}
+
+.carousel-caption p {
+     width: 60%;
+     margin: auto;
+     font-size: 18px;
+     line-height: 1.9;
+
+}
+
+
+.carousel-inner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.navbar-nav a {
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 30px;
-    background-color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
-.about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.navbar-light .navbar-brand {
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: #000;
+
+}
+
+.navbar-light .navbar-nav .navbar-link {
+    color: #000;
+}
+
+.w-100 {
+    height: 100vh;
+}
+
+.services .card {
+    margin-bottom: 30px;
+}
+
+.services .card-body i {
+    font-size: 40px;
+}
+
+
+
+.team .card-body i {
     font-size: 20px;
 }
 
-img {
-    max-width: 100%;
-    height: 30%;
+.portfolio .card {
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
+}
+
+.team .card {
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
+}
+
+
+.address {
+    margin-top: 20px;
+}
+
+.address h3 {
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
-p {
-    text-align: justify;
-    font-weight: 500;
-   
+.address p {
+    margin: 5px 0;
 }
 
-.home-button {
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-link {
     display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    margin-right: 10px;
 }
 
-.home-button:hover {
-    background-color: yellowgreen;
+/* Add specific styling for the social media icons/images */
+.social-link img {
+    width: 30px; /* Adjust the size as needed */
+    height: auto;
 }
 
-.contact-button, .home-button {
-    display: inline-block;
-    font-weight: bold;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-right: 30px; /* Add margin for spacing between buttons */
-}
 
-.contact-button {
-    margin-bottom: 15px;
-    background-color: black;
-    color: white;
-}
 
-.contact-button:hover {
-    background-color: yellowgreen;
-}
 
-.footer {
-    background-color: #201c1c; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
+@media only screen and (max-width: 768px) and (max-width: 991px) {
+    .carousel-caption{
+        bottom: 370px;
     }
+    .carousel-caption p {
+        width: 100%;
+    }
+
+    .card {
+        margin-bottom: 30px;
+    }
+    .img-area img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .carousel-caption {
+        bottom: 125px;
+    }
+    .carousel-caption h5 {
+        
+         font-size: 20px;
+    }
+    .carousel-caption a {
+        padding: 10px 15px;
+    }
+
+    .carousel-caption p {
+        width: 100%;
+        line-height: 1.6;
+        font-size: 18px;
+    }
+    
+    .about-text {
+        padding-top: 50px;
+    }
+    .card {
+        margin-bottom: 30px;
+    }
+}
+
+
 
 
