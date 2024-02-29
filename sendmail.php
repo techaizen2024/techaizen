@@ -1,38 +1,35 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "support@techaizen.com"; // Replace with your actual email address
-    $subject = "New Contact Form Submission";
-
+    // Get form data
     $full_name = $_POST["full_name"];
     $email = $_POST["email"];
     $query = $_POST["query"];
 
-    $message = "Name: $full_name\nEmail: $email\nQuery: $query";
+    // Set recipient email address
+    $to = "support@techaizen.com";
 
-    $mail = new PHPMailer(true);
+    // Set subject
+    $subject = "New Contact Form Submission";
 
-    try {
-        $mail->setFrom($email);
-        $mail->addAddress($to);
-        $mail->Subject = $subject;
-        $mail->Body = $message;
+    // Build the email message
+    $message = "Full Name: $full_name\n";
+    $message .= "Email: $email\n";
+    $message .= "Query:\n$query";
 
-        // Uncomment the next line if you want to send HTML emails
-        // $mail->isHTML(true);
+    // Set additional headers
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-type: text/plain; charset=utf-8\r\n";
 
-        $mail->send();
+    // Attempt to send the email
+    if (mail($to, $subject, $message, $headers)) {
         echo "Email sent successfully!";
-    } catch (Exception $e) {
-        echo "Error sending email: " . $mail->ErrorInfo;
+    } else {
+        echo "Error sending email. Please try again later.";
     }
 } else {
-    echo "Invalid request.";
+    // Redirect if accessed directly
+    header("Location: index.html");
+    exit();
 }
 ?>
